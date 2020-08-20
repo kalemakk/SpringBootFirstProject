@@ -1,13 +1,15 @@
 package com.sab.student.Dao;
 
 import com.sab.student.Model.Student;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 @Repository
-public class StudentDao {
+@Qualifier("fakedata")
+public class StudentDao implements StudentDaoAccess {
     private static Map<Integer, Student> students;
     static {
         students = new HashMap<Integer, Student>(){
@@ -18,8 +20,29 @@ public class StudentDao {
             }
         };
     }
+    @Override
     public Collection<Student> getStudents(){
         return this.students.values();
     }
 
+    @Override
+    public Student getStudentById(int id) {
+        return this.students.get(id);
+
+    }
+    @Override
+    public void removeStudentById(int id){
+        this.students.remove(id);
+    }
+    @Override
+    public void insertStudent(Student student){
+        students.put(student.getId(),student);
+    }
+    @Override
+    public void updateStudentById(Student student){
+        Student previousStudentObj = students.get(student.getId());
+        previousStudentObj.setCourse(student.getCourse());
+        previousStudentObj.setName(student.getName());
+        students.put(student.getId(),student);
+    }
 }

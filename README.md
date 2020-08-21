@@ -4,7 +4,7 @@ Exploring Spring Boot Frame
 To Start The (Person)Api<br>
 1. Clone the project<br>
     Open your terminal and type in<br>`clone https://github.com/kalemakk/SpringBootFirstProject.git`
-2. Move to the target directory<br>
+2. Move to the app directory<br>
     While your terminal is still open type<br>
     `cd app`
 3. Execute the application<br>

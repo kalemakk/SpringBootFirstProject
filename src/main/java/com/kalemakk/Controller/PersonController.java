@@ -4,13 +4,10 @@ import com.kalemakk.Model.Person;
 import com.kalemakk.Services.PersonService;
 import io.micrometer.core.lang.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.MediaType;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 
-import java.awt.*;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
@@ -24,7 +21,7 @@ public class PersonController {
         this.personService = personService;
     }
     @PostMapping
-    public void addPerson(@Validated @NonNull @RequestBody Person person){
+    public void addPerson(@Valid @NonNull @RequestBody Person person){
         personService.addPerson(person);
     }
     @GetMapping(value = "/all")
@@ -40,7 +37,7 @@ public class PersonController {
         return this.personService.getPersonById(id).orElse(null);
     }
     @PutMapping(path = "/{id}")
-    public int updatePerson(@PathVariable("id") UUID id,@Validated @NonNull @RequestBody Person person){
+    public int updatePerson(@PathVariable("id") UUID id,@Valid @NonNull @RequestBody Person person){
         return this.personService.updatePerson(id,person);
     }
 }

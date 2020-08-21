@@ -1,2 +1,7 @@
-#server.address=127.0.0.1
-#server.port=5000
+
+app:
+  data-source:
+    jdbc-url: jdbc:postgresql://localhost:6000/springboot
+    username: postgres
+    password: mysecretpassword
+    pool-size: 30

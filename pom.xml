@@ -11,7 +11,7 @@
     <groupId>com.arnoldkk</groupId>
     <artifactId>real</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>real</name>
+    <name>personApi</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

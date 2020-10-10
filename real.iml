@@ -141,5 +141,6 @@
     <orderEntry type="library" name="Maven: org.sonatype.plexus:plexus-cipher:1.4" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-utils:1.5.15" level="project" />
     <orderEntry type="library" name="Maven: org.flywaydb:flyway-core:6.4.4" level="project" />
+    <orderEntry type="library" name="Maven: com.github.dpaukov:combinatoricslib3:3.3.0" level="project" />
   </component>
 </module>

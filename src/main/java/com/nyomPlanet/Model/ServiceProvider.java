@@ -1,12 +1,42 @@
 package com.nyomPlanet.Model;
-
 import java.util.UUID;
-
 public class ServiceProvider {
-    private UUID serviceProviderId;
-    private String serviceProviderContact;
-    private String serviceProviderAddress;
     private String serviceProviderName;
+    private UUID serviceProviderId;
+    private String serviceProviderLocation;
+    private String serviceProviderContact;
+    private int serviceCapacity;
+    private double serviceCost;
+    private ServiceType serviceType;
+
+    public enum ServiceType{
+        CAR,DECOR,MAKEUP,TENTS,SALOON,CAKE
+    }
+    public ServiceProvider(String serviceProviderName, UUID serviceProviderId, String serviceProviderLocation, String serviceProviderContact, int serviceCapacity, double serviceCost, ServiceType serviceType) {
+        this.serviceProviderName = serviceProviderName;
+        this.serviceProviderId = serviceProviderId;
+        this.serviceProviderLocation = serviceProviderLocation;
+        this.serviceProviderContact = serviceProviderContact;
+        this.serviceCapacity = serviceCapacity;
+        this.serviceCost = serviceCost;
+        this.serviceType = serviceType;
+    }
+
+    public ServiceType getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(ServiceType serviceType) {
+        this.serviceType = serviceType;
+    }
+
+    public String getServiceProviderName() {
+        return serviceProviderName;
+    }
+
+    public void setServiceProviderName(String serviceProviderName) {
+        this.serviceProviderName = serviceProviderName;
+    }
 
     public UUID getServiceProviderId() {
         return serviceProviderId;
@@ -14,6 +44,14 @@ public class ServiceProvider {
 
     public void setServiceProviderId(UUID serviceProviderId) {
         this.serviceProviderId = serviceProviderId;
+    }
+
+    public String getServiceProviderLocation() {
+        return serviceProviderLocation;
+    }
+
+    public void setServiceProviderLocation(String serviceProviderLocation) {
+        this.serviceProviderLocation = serviceProviderLocation;
     }
 
     public String getServiceProviderContact() {
@@ -24,19 +62,19 @@ public class ServiceProvider {
         this.serviceProviderContact = serviceProviderContact;
     }
 
-    public String getServiceProviderAddress() {
-        return serviceProviderAddress;
+    public int getServiceCapacity() {
+        return serviceCapacity;
     }
 
-    public void setServiceProviderAddress(String serviceProviderAddress) {
-        this.serviceProviderAddress = serviceProviderAddress;
+    public void setServiceCapacity(int serviceCapacity) {
+        this.serviceCapacity = serviceCapacity;
     }
 
-    public String getServiceProviderName() {
-        return serviceProviderName;
+    public double getServiceCost() {
+        return serviceCost;
     }
 
-    public void setServiceProviderName(String serviceProviderName) {
-        this.serviceProviderName = serviceProviderName;
+    public void setServiceCost(double serviceCost) {
+        this.serviceCost = serviceCost;
     }
 }
